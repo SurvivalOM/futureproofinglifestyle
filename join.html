@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Become a Future Proofer — Future Proofing Lifestyle Network</title>
+<meta name="description" content="Not a program — a movement. Volunteer to help create, protect and transfer Happiness, Health and Wealth. Free to join. Take the pledge and become a Future Proofer." />
+<meta property="og:title" content="Become a Future Proofer" />
+<meta property="og:description" content="Join the movement to future-proof Happiness, Health and Wealth — for yourself, your family, and the generations to come." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="fpl-logo-full.png" />
+<link rel="icon" type="image/png" href="fpl-emblem.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14223F; --navy-2:#1B2C54; --navy-3:#22335f;
+    --gold:#C6A249; --gold-lt:#E3C778; --gold-dk:#A8842F;
+    --cream:#F4F1E8; --cream-2:#D9D5C7; --muted:#9DA8C2;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans); color:var(--cream); line-height:1.65;
+    background:var(--navy);
+    background-image:radial-gradient(1200px 600px at 50% -10%, #243a6b 0%, var(--navy-2) 38%, var(--navy) 75%);
+    min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:600px;margin:0 auto;padding:28px 22px 60px}
+  /* --- header --- */
+  .brand{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:6px}
+  .emblem{width:46px;height:46px;flex:none;object-fit:contain}
+  .brand-name{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.5px;color:var(--cream)}
+  .brand-name b{color:var(--gold);font-weight:600}
+  .motto{text-align:center;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:30px}
+  /* --- hero --- */
+  .eyebrow{text-align:center;font-size:12px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.12;text-align:center;color:var(--cream);margin-bottom:18px}
+  h1 .hl{color:var(--gold)}
+  .sub{text-align:center;font-size:17px;color:var(--cream-2);max-width:520px;margin:0 auto 18px}
+  .reframe{text-align:center;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--gold-lt);margin:0 auto 26px;max-width:480px}
+  /* --- live counter --- */
+  .counter{display:flex;align-items:center;justify-content:center;gap:9px;margin:0 auto 34px;
+    background:rgba(198,162,73,.10);border:1px solid rgba(198,162,73,.32);border-radius:100px;
+    padding:9px 18px;width:max-content;max-width:100%}
+  .pulse{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(198,162,73,.6);animation:p 2s infinite}
+  @keyframes p{0%{box-shadow:0 0 0 0 rgba(198,162,73,.55)}70%{box-shadow:0 0 0 9px rgba(198,162,73,0)}100%{box-shadow:0 0 0 0 rgba(198,162,73,0)}}
+  .counter b{color:var(--gold);font-weight:600}
+  .counter span{font-size:14px;color:var(--cream-2)}
+  /* --- receive list --- */
+  .card{background:rgba(34,51,95,.55);border:1px solid rgba(198,162,73,.22);border-radius:16px;padding:24px 22px;margin-bottom:22px;backdrop-filter:blur(4px)}
+  .card h3{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;text-align:center}
+  .recv{list-style:none}
+  .recv li{display:flex;gap:13px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .recv li:last-child{border-bottom:none}
+  .tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;margin-top:1px}
+  .recv b{color:var(--cream);font-weight:600}
+  .recv small{display:block;color:var(--muted);font-size:13.5px;line-height:1.5}
+  /* --- form --- */
+  .form-card{background:linear-gradient(180deg,rgba(34,51,95,.85),rgba(27,44,84,.92));border:1px solid rgba(198,162,73,.4);border-radius:18px;padding:26px 22px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .form-card h2{font-family:var(--serif);font-weight:600;font-size:26px;text-align:center;color:var(--cream);margin-bottom:4px}
+  .form-card .lead{text-align:center;font-size:14.5px;color:var(--muted);margin-bottom:22px}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:13px;font-weight:500;color:var(--cream-2);margin-bottom:6px}
+  .field label .opt{color:var(--muted);font-weight:400}
+  .field input,.field select{width:100%;padding:13px 14px;font-family:var(--sans);font-size:15px;color:var(--cream);
+    background:rgba(10,18,38,.6);border:1px solid rgba(157,168,194,.35);border-radius:10px;transition:.18s}
+  .field input::placeholder{color:#6f7c9c}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,162,73,.18);background:rgba(10,18,38,.85)}
+  .field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C6A249' d='M6 8 0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+  .field select option{color:#14223F;background:#F4F1E8}
+  /* pledge */
+  .pledge{display:flex;gap:11px;align-items:flex-start;margin:18px 0 8px;padding:14px;background:rgba(198,162,73,.07);border:1px solid rgba(198,162,73,.28);border-radius:11px;cursor:pointer}
+  .pledge input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--gold);cursor:pointer}
+  .pledge span{font-size:13.5px;color:var(--cream-2);line-height:1.55}
+  .pledge b{color:var(--gold-lt);font-weight:600}
+  .err{color:#ff9a8a;font-size:12.5px;margin-top:5px;display:none}
+  .err.show{display:block}
+  .cta{width:100%;margin-top:16px;padding:16px;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--navy);
+    background:linear-gradient(180deg,var(--gold-lt),var(--gold));border:none;border-radius:12px;cursor:pointer;transition:.18s;
+    box-shadow:0 8px 24px rgba(198,162,73,.3)}
+  .cta:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(198,162,73,.42)}
+  .cta:active{transform:translateY(0)}
+  .cta:disabled{opacity:.7;cursor:wait}
+  .trust{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.5}
+  .trust i{color:var(--gold);font-style:normal}
+  /* success */
+  .success{display:none;text-align:center;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .success h2{font-family:var(--serif);font-size:30px;color:var(--cream);margin-bottom:6px}
+  .success .welcome{color:var(--gold-lt);font-size:16px;margin-bottom:22px}
+  .id-card{background:linear-gradient(135deg,#22335f,#14223F);border:1px solid var(--gold);border-radius:14px;padding:20px;text-align:left;margin:0 auto 22px;max-width:360px;position:relative;overflow:hidden}
+  .id-card::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border:1px solid rgba(198,162,73,.25);border-radius:50%}
+  .id-card .lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+  .id-card .num{font-family:var(--serif);font-size:24px;color:var(--gold-lt);letter-spacing:1px;margin-bottom:14px}
+  .id-card .nm{font-size:18px;color:var(--cream);font-weight:600}
+  .id-card .tier{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .id-card .idmotto{font-size:11px;color:var(--cream-2);margin-top:14px;border-top:1px solid rgba(198,162,73,.25);padding-top:10px}
+  .pledge-box{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--cream-2);line-height:1.7;margin:0 auto 24px;max-width:440px}
+  .pledge-box b{color:var(--gold-lt);font-style:normal}
+  .next{background:rgba(198,162,73,.1);border:1px solid rgba(198,162,73,.35);border-radius:14px;padding:20px;margin-bottom:16px}
+  .next .t{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+  .next h4{font-family:var(--serif);font-size:21px;color:var(--cream);font-weight:600;margin-bottom:7px}
+  .next p{font-size:14px;color:var(--cream-2);margin-bottom:15px}
+  .next a{display:inline-block;padding:13px 26px;background:var(--gold);color:var(--navy);font-weight:600;font-size:15px;text-decoration:none;border-radius:11px;transition:.18s}
+  .next a:hover{background:var(--gold-lt)}
+  .share-btn{background:none;border:1px solid rgba(157,168,194,.4);color:var(--cream-2);font-family:var(--sans);font-size:13.5px;padding:11px 18px;border-radius:10px;cursor:pointer;transition:.15s}
+  .share-btn:hover{border-color:var(--gold);color:var(--gold-lt)}
+  /* manifesto toggle */
+  .manifesto-link{text-align:center;margin:30px 0 0}
+  .manifesto-link button{background:none;border:none;color:var(--gold);font-family:var(--sans);font-size:13.5px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+  .manifesto{display:none;font-size:14.5px;color:var(--cream-2);line-height:1.75;margin-top:16px;padding:20px;background:rgba(10,18,38,.4);border-radius:14px;border:1px solid rgba(198,162,73,.18)}
+  .manifesto.show{display:block}
+  .manifesto p{margin-bottom:11px}
+  .manifesto b{color:var(--gold-lt);font-weight:600}
+  footer{text-align:center;font-size:12px;color:var(--muted);margin-top:40px;line-height:1.6}
+  footer .mission{color:var(--gold);opacity:.8}
+  /* video explainer shell */
+  .video-wrap{margin:0 0 30px}
+  .video-label{text-align:center;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid rgba(198,162,73,.35);cursor:pointer;background:#0e1830}
+  .video.playing{cursor:default}
+  .video .poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background-size:cover;background-position:center;z-index:4}
+  .video .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,34,63,.4),rgba(20,34,63,.78))}
+  .video .play{position:relative;width:66px;height:66px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(198,162,73,.45);transition:.2s}
+  .video:hover .play{transform:scale(1.06)}
+  .video .play::after{content:"";border-left:21px solid var(--navy);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+  .video .vtext{position:relative;color:var(--cream);font-family:var(--serif);font-size:19px;text-align:center;padding:0 22px;line-height:1.3}
+  .video .vtext small{display:block;font-family:var(--sans);font-size:12.5px;color:var(--cream-2);margin-top:5px}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
+  /* in-page animated explainer */
+  .ex{position:absolute;inset:0;display:none;flex-direction:column;z-index:2;
+    background:radial-gradient(900px 520px at 50% -10%, #2a4275 0%, #18294d 55%, #0f1d3a 100%);overflow:hidden}
+  .ex.on{display:flex}
+  .ex .stage{flex:1;display:flex;align-items:center;justify-content:center;padding:26px 24px 44px;position:relative}
+  .ex .scene{position:absolute;left:24px;right:24px;text-align:center;opacity:0;transform:translateY(12px);transition:opacity .85s ease,transform .85s ease}
+  .ex .scene.show{opacity:1;transform:none}
+  .ex .scene .cap{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.28;color:var(--cream)}
+  .ex .scene.big .cap{font-size:34px;letter-spacing:.5px}
+  .ex .scene .cap b{color:var(--cream);font-weight:700}
+  .ex .g{color:var(--gold-lt)}
+  .ex .endwrap{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .ex .encta{background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:var(--navy);border:none;padding:12px 22px;border-radius:11px;font-family:var(--sans);font-weight:600;font-size:14px;cursor:pointer;box-shadow:0 8px 24px rgba(198,162,73,.3)}
+  .ex .encta:hover{transform:translateY(-1px)}
+  .ex .bar{position:absolute;left:0;top:0;height:3px;background:var(--gold);width:0;transition:width .3s linear;z-index:6}
+  .ex .ctrl{position:absolute;bottom:11px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;z-index:6}
+  .ex .ctrl button{background:rgba(8,15,32,.55);border:1px solid rgba(198,162,73,.4);color:var(--cream-2);font-family:var(--sans);font-size:11.5px;padding:6px 12px;border-radius:20px;cursor:pointer;transition:.15s}
+  .ex .ctrl button:hover{border-color:var(--gold);color:var(--gold-lt)}
+  /* live vote */
+  .vote-card .vote-q{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.32;text-align:center;color:var(--cream);margin-bottom:5px}
+  .vote-card .vote-q .g{color:var(--gold-lt)}
+  .vote-card .vote-sub{text-align:center;font-size:13px;color:var(--muted);margin-bottom:18px}
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .vopt{display:flex;align-items:center;gap:13px;padding:14px 16px;border:1px solid rgba(157,168,194,.3);border-radius:12px;cursor:pointer;transition:.15s;position:relative;overflow:hidden}
+  .vopt:hover{border-color:var(--gold)}
+  .vopt .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(198,162,73,.16);transition:width 1.1s cubic-bezier(.2,.8,.2,1);z-index:0}
+  .vopt .ico{position:relative;z-index:1;flex:none;width:34px;height:34px;border-radius:9px;background:rgba(198,162,73,.14);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .vopt .lab{position:relative;z-index:1;font-weight:600;color:var(--cream);font-size:16px}
+  .vopt .lab small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;line-height:1.35;margin-top:1px}
+  .vopt .pct{position:relative;z-index:1;margin-left:auto;font-weight:700;font-size:16px;color:var(--gold-lt);opacity:0;transition:.5s}
+  .vote-card.voted .vopt{cursor:default}
+  .vote-card.voted .vopt:hover{border-color:rgba(157,168,194,.3)}
+  .vote-card.voted .vopt.mine{border-color:var(--gold);box-shadow:0 0 0 2px rgba(198,162,73,.22)}
+  .vote-card.voted .pct{opacity:1}
+  .vote-result{text-align:center;font-size:14px;color:var(--cream-2);margin-top:16px;line-height:1.5;max-height:0;overflow:hidden;opacity:0;transition:.6s}
+  .vote-card.voted .vote-result{opacity:1;max-height:120px;margin-top:16px}
+  .vote-result b{color:var(--gold-lt);font-weight:600}
+  /* floating join button (G2) */
+  .joinfab{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(120px);z-index:60;background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:var(--navy);font-family:var(--sans);font-weight:600;font-size:15px;padding:13px 26px;border-radius:30px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;transition:transform .35s ease,opacity .35s ease;pointer-events:none}
+  .joinfab.show{transform:translateX(-50%) translateY(0);opacity:1;pointer-events:auto}
+  .joinfab:hover{background:var(--gold-lt)}
+  /* founder quote (G3) */
+  .founder{display:flex;gap:16px;align-items:center;background:rgba(10,18,38,.4);border:1px solid rgba(198,162,73,.22);border-radius:16px;padding:20px 22px;margin-bottom:22px}
+  .founder .f-photo{flex:none;width:104px;border-radius:14px;overflow:hidden;border:1px solid rgba(198,162,73,.42);box-shadow:0 6px 18px rgba(0,0,0,.42)}
+  .founder .f-photo img{display:block;width:100%;height:auto}
+  .founder blockquote{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--cream-2);line-height:1.55;margin:0}
+  .founder .f-by{font-size:12.5px;color:var(--gold);margin-top:8px;font-style:normal}
+  /* faq (G7) */
+  .faq-item{border-top:1px solid rgba(255,255,255,.07);padding:13px 0}
+  .faq-item:first-of-type{border-top:none}
+  .faq-q{font-weight:600;color:var(--cream);font-size:14.5px;margin-bottom:5px}
+  .faq-q b{color:var(--gold);font-family:var(--serif);margin-right:7px}
+  .faq-a{font-size:13.5px;color:var(--muted);line-height:1.55}
+  /* success first-step + price reassurance (G4/G5) */
+  .firststep{font-size:13.5px;color:var(--cream-2);max-width:440px;margin:0 auto 18px;line-height:1.55}
+  .nextnote{font-size:12.5px;color:var(--gold-lt);margin-top:10px;line-height:1.5}
+  @media(max-width:480px){ .founder{flex-direction:column;text-align:center} }
+  /* guiding lights (books) */
+  .lights .lights-sub{text-align:center;font-size:13.5px;color:var(--muted);margin:-4px auto 18px;max-width:500px;line-height:1.55}
+  .books{display:flex;flex-direction:column;gap:12px}
+  .book{display:flex;gap:15px;align-items:center;background:rgba(10,18,38,.45);border:1px solid rgba(198,162,73,.22);border-radius:13px;padding:14px 15px}
+  .book .cov{flex:none;width:84px;height:112px;display:flex;align-items:center;justify-content:center}
+  .book .cov img{max-width:84px;max-height:112px;width:auto;height:auto;border-radius:5px;box-shadow:0 5px 16px rgba(0,0,0,.45)}
+  .book .info{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+  .book .bt{font-family:var(--serif);font-weight:600;font-size:19px;color:var(--cream);line-height:1.12}
+  .book .btag{font-size:10.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--gold);margin:4px 0 7px}
+  .book .bd{font-size:13px;color:var(--cream-2);line-height:1.5;margin-bottom:11px}
+  .book a,.book .soon{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;padding:8px 13px;border-radius:9px;text-decoration:none;transition:.15s}
+  .book a{background:rgba(198,162,73,.14);color:var(--gold-lt);border:1px solid rgba(198,162,73,.42);cursor:pointer}
+  .book a:hover{background:var(--gold);color:var(--navy)}
+  .book .soon{background:rgba(157,168,194,.08);color:var(--muted);border:1px solid rgba(157,168,194,.22);cursor:default}
+  .lights-more{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px}
+  @media(max-width:480px){ .book .cov{width:72px;height:96px} .book .cov img{max-width:72px;max-height:96px} }
+  /* pledge display card */
+  .pledge-card{background:rgba(10,18,38,.45);border:1px solid rgba(198,162,73,.32);border-radius:18px;padding:26px 24px;margin-bottom:22px}
+  .pledge-card .pc-h{text-align:center;font-family:var(--serif);font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .pledge-card .pc-intro{text-align:center;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--cream);line-height:1.5;margin-bottom:16px}
+  .vows{list-style:none}
+  .vows li{display:flex;gap:12px;align-items:flex-start;padding:8px 0;font-size:14.5px;color:var(--cream-2);line-height:1.55}
+  .vows li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:9px}
+  .vows b{color:var(--cream);font-weight:600}
+  .pledge-card .pc-close{text-align:center;font-family:var(--serif);font-size:16px;color:var(--cream-2);line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid rgba(198,162,73,.22)}
+  .pledge-card .pc-close b{color:var(--gold-lt);font-weight:600;font-style:normal}
+  @media(max-width:480px){
+    h1{font-size:31px} .wrap{padding:22px 16px 50px} .reframe{font-size:19px} .vows li{font-size:14px}
+    .ex .scene .cap{font-size:21px} .ex .scene.big .cap{font-size:26px}
+    .vote-card .vote-q{font-size:19px} .vopt .lab{font-size:15px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- BRAND -->
+  <div class="brand">
+    <img class="emblem" src="fpl-emblem.png" alt="Future Proofing Lifestyle emblem" />
+    <div class="brand-name">Future Proofing <b>Lifestyle</b></div>
+  </div>
+  <div class="motto">Create · Protect · Transfer</div>
+
+  <!-- HERO -->
+  <div class="eyebrow">A movement — not a program</div>
+  <h1>We're not building an audience.<br>We're assembling <span class="hl">Future Proofers</span>.</h1>
+  <p class="sub">A global mission to help every person <b>create, protect and transfer</b> the three things that matter most — <b>Happiness, Health and Wealth</b> — in a world that has never been more uncertain.</p>
+  <p class="reframe">You're not subscribing. You're volunteering for a mission.</p>
+
+  <div class="counter">
+    <span class="pulse"></span>
+    <span><b id="count">1,007</b> Future Proofers and climbing</span>
+  </div>
+
+  <!-- VIDEO EXPLAINER -->
+  <div class="video-wrap">
+    <div class="video-label">New here? Watch this first — 80 seconds</div>
+    <div class="video" id="video">
+      <div class="poster" id="vposter">
+        <div class="scrim"></div>
+        <div class="play" aria-hidden="true"></div>
+        <div class="vtext">What is the Future Proofing Lifestyle?<small id="vsub">A short introduction · tap to play</small></div>
+      </div>
+      <!-- in-page animated explainer (plays when no YouTube video is set) -->
+      <div class="ex" id="ex">
+        <div class="bar" id="exbar"></div>
+        <div class="stage" id="exstage"></div>
+        <div class="ctrl" id="exctrl">
+          <button id="exvo">🔊 Voiceover: On</button>
+          <button id="exreplay">↻ Replay</button>
+          <button id="exskip">Skip ⏭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE VOTE -->
+  <div class="card vote-card" id="voteCard">
+    <h3>Cast your vote — your voice in the mission</h3>
+    <div class="vote-q">If you could future-proof <span class="g">just one</span> first — for yourself and the ones you love — which comes first?</div>
+    <div class="vote-sub">Tap to vote and see where the movement stands right now.</div>
+    <div class="opts" id="opts">
+      <div class="vopt" data-v="Happiness"><span class="fill"></span><span class="ico">🌿</span><span class="lab">Happiness<small>Peace of mind, relationships, meaning</small></span><span class="pct"></span></div>
+      <div class="vopt" data-v="Health"><span class="fill"></span><span class="ico">❤️</span><span class="lab">Health<small>Body and mind, for the long run</small></span><span class="pct"></span></div>
+      <div class="vopt" data-v="Wealth"><span class="fill"></span><span class="ico">⚖️</span><span class="lab">Wealth<small>Financial freedom — never to be bought</small></span><span class="pct"></span></div>
+    </div>
+    <div class="vote-result" id="voteResult"></div>
+  </div>
+
+  <!-- WHAT YOU RECEIVE -->
+  <div class="card">
+    <h3>A Future Proofer gives first — here's what you receive</h3>
+    <ul class="recv">
+      <li><span class="tick">✓</span><div><b>Your numbered Volunteer ID</b><small>Issued the moment you join — you become Future Proofer #____ on the global register.</small></div></li>
+      <li><span class="tick">✓</span><div><b>The Pledge &amp; the Manifesto</b><small>Your place in a movement with a clear Purpose, Vision and Mission.</small></div></li>
+      <li><span class="tick">✓</span><div><b>Our books — the movement's guiding lights — free</b><small>Read or listen to every book, chapter by chapter, in our free reading app. Buy a copy only if you wish; the knowledge always stays free.</small></div></li>
+      <li><span class="tick">✓</span><div><b>An invitation to Friends &amp; Family</b><small>Offered, never forced: a structured path — try now, pay later — instead of scattered learning.</small></div></li>
+    </ul>
+  </div>
+
+  <!-- WHAT YOU DO -->
+  <div class="card">
+    <h3>What a Future Proofer is asked to do</h3>
+    <ul class="recv">
+      <li><span class="tick">1</span><div><b>Apply one idea</b><small>Put a single thing you learn into practice in your own life — that's how you future-proof yourself first.</small></div></li>
+      <li><span class="tick">2</span><div><b>Share one video</b><small>Pass one FPL video to someone who needs it. No quotas, no pressure.</small></div></li>
+      <li><span class="tick">3</span><div><b>Bring one friend</b><small>Invite at least one person to volunteer too — that's how a movement grows.</small></div></li>
+    </ul>
+  </div>
+
+  <!-- A WORD FROM THE FOUNDER (photo added — approve/edit the words if you wish) -->
+  <div class="founder">
+    <div class="f-photo"><img src="founder.jpg" alt="Omjai Venkat, founder of Future Proofing Lifestyle" /></div>
+    <div>
+      <blockquote>"I'm not a guru, and I won't pretend to be. I learned these things the hard way — and I'd give anything to have known them sooner. That's why everything here is free. If even one idea spares you the years it cost me, this movement will have been worth it."</blockquote>
+      <div class="f-by">— Omjai Venkat, founder of Future Proofing Lifestyle</div>
+    </div>
+  </div>
+
+  <!-- THE PLEDGE (read it, then accept below) -->
+  <div class="pledge-card">
+    <div class="pc-h">The Future Proofer's Pledge</div>
+    <p class="pc-intro">"I join the Future Proofing Lifestyle Network as a volunteer — one who serves without expectation."</p>
+    <ul class="vows">
+      <li><b>To protect myself first</b> — my Happiness, my Health, my Wealth — so that I am able to protect others.</li>
+      <li><b>To pursue true financial freedom</b> — to never be bought, and to let money follow the value I create.</li>
+      <li><b>To earn only good money</b> — never at the cost of another person, or of nature.</li>
+      <li><b>To keep learning</b>, and to drive out ignorance with light.</li>
+      <li><b>To share what I receive</b>, and to bring others into the mission.</li>
+      <li><b>To stand for the Purpose, the Vision and the Mission</b> — not for what I will get in return.</li>
+    </ul>
+    <p class="pc-close">Whether the world rises or falls, I will help build a future worth living in — for myself, for my family, and for the generations to come. <b>This is my pledge. I am a Future Proofer.</b></p>
+  </div>
+
+  <!-- THE GUIDING LIGHTS (books + reading apps) -->
+  <div class="card lights">
+    <h3>The Guiding Lights — our books, free to read or hear</h3>
+    <p class="lights-sub">The movement's principles, written down. Never written to make money — read or listen to every chapter free in our reading apps. Buy a copy only if you wish.</p>
+    <div class="books" id="books"></div>
+    <p class="lights-more">More guiding lights are being written and added.</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-card" id="formCard">
+    <h2>Take your place</h2>
+    <p class="lead">Free. Takes 30 seconds. A separate, private volunteer register.</p>
+    <form id="vForm" novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="First &amp; last name" autocomplete="name" />
+        <div class="err" id="e-name">Please enter your name.</div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" />
+        <div class="err" id="e-email">Please enter a valid email.</div>
+      </div>
+      <div class="field">
+        <label for="mobile">WhatsApp number <span class="opt">— optional, for mission updates</span></label>
+        <input type="tel" id="mobile" name="mobile" placeholder="+91 / +1 …  with country code" autocomplete="tel" />
+      </div>
+      <div class="field">
+        <label for="country">Country <span class="opt">— optional</span></label>
+        <input type="text" id="country" name="country" placeholder="Where are you joining from?" autocomplete="country-name" />
+      </div>
+
+      <label class="pledge" for="pledge">
+        <input type="checkbox" id="pledge" />
+        <span>I have read and I <b>take the Future Proofer's Pledge above</b>. I join to serve the mission, not for what I'll get in return.</span>
+      </label>
+      <div class="err" id="e-pledge">Please accept the pledge to join.</div>
+
+      <button type="submit" class="cta" id="submitBtn">Take the pledge — make me a Future Proofer →</button>
+      <p class="trust"><i>🔒</i> We'll never spam you or sell your details. Ever. You can leave the mission anytime.</p>
+    </form>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success" id="success">
+    <h2>Welcome aboard.</h2>
+    <p class="welcome">You are now <b id="welcomeNum">Future Proofer #1,008</b>.</p>
+    <div class="id-card">
+      <div class="lbl">Future Proofing Lifestyle Network · Volunteer ID</div>
+      <div class="num" id="idNum">FPL-V-001008</div>
+      <div class="nm" id="idName">—</div>
+      <div class="tier">Tier: Volunteer · Issued <span id="idDate">today</span></div>
+      <div class="idmotto">Create · Protect · Transfer — Happiness · Health · Wealth</div>
+    </div>
+    <p class="pledge-box">"Whether the world rises or falls, I will help build a future worth living in — for myself, for my family, and for the generations to come. <b>I am a Future Proofer.</b>"</p>
+    <p class="firststep">We'll be in touch with your welcome shortly. Your first move as a Future Proofer: put one idea into practice this week — and bring one friend into the movement.</p>
+    <div class="next">
+      <div class="t">Your next step — optional</div>
+      <h4>Claim your free Friends &amp; Family membership</h4>
+      <p>A structured path through the books, tools and live sessions. Try it now, pay later — only if and when you see the value.</p>
+      <a href="__PASTE_YOUR_TAG_MANGO_FREE_MEMBERSHIP_LINK_HERE__" id="nextLink" target="_blank" rel="noopener">Open my free membership →</a>
+      <p class="nextnote">The movement itself is, and always will be, free. This is simply an optional structured path — there's never any pressure to pay.</p>
+    </div>
+    <button class="share-btn" id="shareBtn">📣 Share — “I'm a Future Proofer #____. Join the mission.”</button>
+  </div>
+
+  <!-- FAQ (G7) -->
+  <div class="card faq">
+    <h3>Honest answers, before you join</h3>
+    <div class="faq-item"><div class="faq-q"><b>Q</b>Is it really free?</div><div class="faq-a">Yes. Volunteering is free, forever. The books are free to read or hear. You are never required to buy anything.</div></div>
+    <div class="faq-item"><div class="faq-q"><b>Q</b>What will you do with my details?</div><div class="faq-a">We never spam or sell them. We use your email or WhatsApp only to share mission updates — and you can leave anytime.</div></div>
+    <div class="faq-item"><div class="faq-q"><b>Q</b>Is this religious or political?</div><div class="faq-a">No. It's a universal movement about Happiness, Health and Wealth — open to everyone, of any faith or none.</div></div>
+    <div class="faq-item"><div class="faq-q"><b>Q</b>What's expected of me?</div><div class="faq-a">Apply one idea, share one video, bring one friend. No quotas, no pressure.</div></div>
+    <div class="faq-item"><div class="faq-q"><b>Q</b>Can I leave anytime?</div><div class="faq-a">Yes — instantly, no questions asked.</div></div>
+  </div>
+
+  <!-- MANIFESTO -->
+  <div class="manifesto-link">
+    <button id="mToggle">Read the full manifesto ▾</button>
+    <div class="manifesto" id="manifesto">
+      <p><b>The world has never been more powerful — or more uncertain.</b> Wars flare. Markets swing. Pollution has reached the unthinkable — into the ocean, the soil, even a mother's milk. So much of this suffering is man-made, born of selfish motives.</p>
+      <p><b>We refuse to simply wait and watch.</b> We believe that whether the world improves or worsens, every human being can still create, protect and transfer the three things that matter most: Happiness. Health. Wealth.</p>
+      <p>We believe the work begins within — protect yourself first, then your family, then the world. One person at a time, the tide turns.</p>
+      <p>We believe in <b>financial freedom</b> — not a pile of money, but a state of being where your choices can never be bought. We believe in <b>good money</b> — earned without harming a single person or any part of nature. We believe <b>knowledge is light</b>, and that the most basic, life-changing knowledge must be free.</p>
+      <p>This is not a program. It is a movement. Our vision: a world where every human being lives a Future Proofing Lifestyle. <b>If this rings true for you, you are already one of us.</b></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="mission">Mission: reach 5–10% of humanity in five years — then let them reach the rest.</div>
+    © <span id="yr">2026</span> Future Proofing Lifestyle Network · Protect yourself. Then protect the world.
+  </footer>
+
+</div>
+
+<a class="joinfab" id="joinfab" href="#formCard">Join free →</a>
+
+<script>
+/* ============================================================
+   CONFIG — fill these in (see "READ ME - Setup & Deploy.md"):
+   ============================================================ */
+const SCRIPT_URL    = "https://script.google.com/macros/s/AKfycbyPlIEiGJnmF8HhMJ475pT708-eFWureJcvQbRZ20aZVW1-2RGv4Zs4tvLlI6D3Mz6h/exec"; // your Google Sheet endpoint (/exec)
+const NEXT_STEP_URL = "__PASTE_YOUR_TAG_MANGO_FREE_MEMBERSHIP_LINK_HERE__";  // Friends & Family link
+const VIDEO_ID      = "__PASTE_YOUR_YOUTUBE_VIDEO_ID_HERE__"; // OPTIONAL. Leave as-is to use the built-in animated explainer.
+const SEED_COUNT    = 1007; // baseline so the first volunteer becomes #1008 (true count lives in your Sheet)
+const VOTE_SEED     = { Happiness: 402, Health: 451, Wealth: 327 }; // baseline vote tallies for social proof
+/* The Guiding Lights. Paste each book's hosted reading-app URL into `url` to make its
+   button live; leave "" to show a tidy "opening soon" until the app is hosted. */
+const BOOKS = [
+  { title:'Hu-Kno-Mi',            tag:'The foundation · the 13 Guiding Lights', desc:'Drive out ignorance and install the basic truths that future-proof any life.',      cover:'cover-hukonomi.jpg',  url:'' },
+  { title:'Good Money, Bad Money',tag:'Wealth, the honest way',                  desc:'Build real wealth without harming a single person — or nature.',                     cover:'cover-goodmoney.jpg', url:'' },
+  { title:'2 Questions',          tag:'Clarity',                                desc:'Two simple questions that can quietly redirect the whole course of your life.',     cover:'cover-2questions.jpg',url:'' },
+  { title:'ProFit',               tag:'Professional fitness',                   desc:'Become genuinely world-class at the work that is truly yours.',                      cover:'cover-profit.jpg',    url:'' },
+];
+/* ============================================================ */
+
+const $ = s => document.querySelector(s);
+document.getElementById('yr').textContent = new Date().getFullYear();
+const hasScript = !s_(SCRIPT_URL);
+const hasVideo  = !s_(VIDEO_ID);
+function s_(v){ return !v || v.indexOf('__')===0; } // true if still a placeholder
+
+/* ---------- live data (counter + votes), with optional live fetch ---------- */
+let liveData = null;
+function localCount(){ return JSON.parse(localStorage.getItem('fpl_volunteers')||'[]').length; }
+function localVotes(){ return JSON.parse(localStorage.getItem('fpl_vote_counts')||'{}'); }
+
+function setCount(n){ $('#count').textContent = Number(n).toLocaleString(); }
+function refreshCount(){
+  const real = liveData && typeof liveData.volunteers==='number' ? liveData.volunteers : localCount();
+  setCount(SEED_COUNT + real);
+}
+refreshCount();
+
+/* JSONP — read live count + vote tallies from the Apps Script without CORS issues */
+function jsonp(url, cb){
+  const name = 'fpl_cb_' + Math.random().toString(36).slice(2);
+  const s = document.createElement('script');
+  let done = false;
+  window[name] = d => { done = true; try{ cb(d); }finally{ delete window[name]; s.remove(); } };
+  s.onerror = () => { if(!done){ delete window[name]; s.remove(); } };
+  s.src = url + (url.indexOf('?')>-1?'&':'?') + 'callback=' + name;
+  document.body.appendChild(s);
+  setTimeout(()=>{ if(!done){ try{ delete window[name]; s.remove(); }catch(e){} } }, 8000);
+}
+if(hasScript){
+  jsonp(SCRIPT_URL, d => { if(d && d.result!=='error'){ liveData = d; refreshCount(); renderVotes(); } });
+}
+
+/* ---------- live vote ---------- */
+let myVote = localStorage.getItem('fpl_vote') || '';
+function voteTallies(){
+  const t = Object.assign({}, VOTE_SEED);
+  const extra = (liveData && liveData.votes) ? liveData.votes : localVotes();
+  for(const k in extra){ t[k] = (t[k]||0) + (extra[k]||0); }
+  return t;
+}
+function renderVotes(){
+  const t = voteTallies();
+  const total = Object.keys(t).reduce((a,k)=>a+t[k],0) || 1;
+  const voted = $('#voteCard').classList.contains('voted');
+  let winner = 'Happiness', best = -1;
+  document.querySelectorAll('.vopt').forEach(o=>{
+    const k = o.dataset.v, pct = Math.round((t[k]||0)/total*100);
+    o.querySelector('.fill').style.width = (voted ? pct : 0) + '%';
+    o.querySelector('.pct').textContent = pct + '%';
+    o.classList.toggle('mine', k===myVote);
+    if((t[k]||0) > best){ best = t[k]||0; winner = k; }
+  });
+  if(myVote){
+    const mp = Math.round((t[myVote]||0)/total*100);
+    $('#voteResult').innerHTML = 'You voted <b>'+myVote+'</b>. '+mp+'% of Future Proofers feel the same — <b>'+winner+'</b> is leading the movement right now.';
+  }
+}
+document.querySelectorAll('.vopt').forEach(o=>{
+  o.addEventListener('click', ()=>{
+    if($('#voteCard').classList.contains('voted')) return;
+    myVote = o.dataset.v;
+    localStorage.setItem('fpl_vote', myVote);
+    const lv = localVotes(); lv[myVote] = (lv[myVote]||0)+1;
+    localStorage.setItem('fpl_vote_counts', JSON.stringify(lv));
+    $('#voteCard').classList.add('voted');
+    renderVotes();
+  });
+});
+if(myVote){ $('#voteCard').classList.add('voted'); }
+renderVotes();
+
+/* guiding lights — render the book cards (read/listen links go live when a url is set) */
+const booksEl = $('#books');
+if(booksEl){
+  booksEl.innerHTML = BOOKS.map(function(b){
+    const cta = (b.url && !s_(b.url))
+      ? '<a href="'+b.url+'" target="_blank" rel="noopener">Read or listen — free →</a>'
+      : '<span class="soon">Free reader — opening soon</span>';
+    const cov = b.cover ? '<div class="cov"><img src="'+b.cover+'" alt="'+b.title+' cover" loading="lazy" /></div>' : '';
+    return '<div class="book">'+cov+'<div class="info"><div class="bt">'+b.title+'</div><div class="btag">'+b.tag+'</div><div class="bd">'+b.desc+'</div>'+cta+'</div></div>';
+  }).join('');
+}
+
+/* floating "Join free" button (G2) */
+function fabUpdate(){
+  var fab = document.getElementById('joinfab'); if(!fab) return;
+  if($('#success').style.display==='block'){ fab.classList.remove('show'); return; }
+  var ft = $('#formCard').getBoundingClientRect().top;
+  var formVisible = ft < window.innerHeight*0.9 && ft > -10;
+  fab.classList.toggle('show', window.scrollY > 520 && !formVisible);
+}
+window.addEventListener('scroll', fabUpdate, {passive:true});
+window.addEventListener('resize', fabUpdate);
+fabUpdate();
+
+/* ---------- video: YouTube if set, else the built-in animated explainer ---------- */
+const vEl = $('#video');
+if(hasVideo){
+  $('#vposter').style.backgroundImage = "url('https://img.youtube.com/vi/" + VIDEO_ID + "/hqdefault.jpg')";
+}
+vEl.addEventListener('click', ()=>{
+  if(vEl.classList.contains('playing')) return;
+  if(hasVideo){
+    vEl.classList.add('playing'); $('#vposter').style.display='none';
+    vEl.insertAdjacentHTML('beforeend', '<iframe src="https://www.youtube.com/embed/'+VIDEO_ID+'?autoplay=1&rel=0" title="What is the Future Proofing Lifestyle?" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>');
+  } else {
+    exPlay();
+  }
+});
+
+/* The animated explainer — manifesto voice, optional spoken voiceover */
+const SCENES = [
+  {cap:'Be honest — you can feel it.<br>The ground is <span class="g">shifting</span>.', say:'Be honest. Somewhere inside, you can feel it. The ground is shifting.'},
+  {cap:'Prices climb. Jobs vanish.<br>The news gets heavier.', say:'Prices climb. Jobs vanish overnight. The news gets heavier by the week.'},
+  {cap:'And quietly you wonder —<br>are my family and I <span class="g">safe</span>?', say:'And quietly, you wonder — are my family and I really safe for what is coming?'},
+  {cap:'You can\'t fix the whole world.<br>You were never meant to.', say:'Here is the truth no one says out loud. You cannot fix the whole world. You were never meant to.', big:true},
+  {cap:'But you <span class="g">can</span> master the three<br>things that decide your life —', say:'But whatever happens out there, you can still master the three things that decide your life.'},
+  {cap:'<span class="g">Happiness · Health · Wealth</span>', say:'Your Happiness. Your Health. Your Wealth.', big:true},
+  {cap:'Learn to <span class="g">create</span> them, <span class="g">protect</span> them,<br>and pass them on.', say:'Not by luck. By learning to create them, protect them, and pass them on, to the people you love.'},
+  {cap:'This is the<br><b>Future Proofing Lifestyle</b>.', say:'That is the Future Proofing Lifestyle.'},
+  {cap:'Not a course. Not a guru.<br>A <span class="g">movement</span>.', say:'Not another course. Not another guru. A movement of ordinary people refusing to be left unprepared.', big:true},
+  {cap:'So we won\'t ask you to subscribe.<br>We\'ll ask you to <span class="g">volunteer</span>.', say:'So we will not ask you to subscribe. We will ask you to volunteer.', big:true},
+  {cap:'Watchers stay stuck.<br>Those who step in <span class="g">change</span>.', say:'Because watchers stay stuck. The ones who step in, and give, are the ones who change.'},
+  {cap:'Every movement needs a <span class="g">guiding light</span>.<br>Ours is written in books.', say:'And every movement needs a guiding light. Ours is written down, in a series of books that hold the principles to future-proof your life.'},
+  {cap:'These books were <span class="g">never</span><br>written to make money.', say:'And here is the proof that we mean it. These books were never written to make money.', big:true},
+  {cap:'They\'re meant to be <span class="g">given away</span> —<br>read or heard, chapter by chapter.', say:'They are meant to be given away. We even built a free app to read, or listen to, every book, chapter by chapter.'},
+  {cap:'Buy one only if you wish.<br>The <span class="g">knowledge stays free</span>.', say:'Buy a book only if you want to. The knowledge itself stays free, for anyone sincere — because life-changing knowledge should never sit behind a price.'},
+  {cap:'Joining is free too: a pledge,<br>your own Future Proofer <span class="g">ID</span>.', say:'And joining is free as well. You take a simple pledge, and receive your own Future Proofer I.D., standing with thousands already rising.'},
+  {cap:'Become someone who can\'t be<br>shaken — and can\'t be <span class="g">bought</span>.', say:'Imagine a you that cannot be shaken, cannot be bought, and lifts everyone around them.', big:true},
+  {cap:'Take the pledge.<br>Become a <span class="g">Future Proofer</span>.', say:'That starts now. Take the pledge. Become a Future Proofer. Protect yourself first — then help us protect the world.', end:true}
+];
+let exIdx=0, exTimer=null, exVO=true, exPlaying=false;
+function exClear(){ if(exTimer){ clearTimeout(exTimer); exTimer=null; } try{ speechSynthesis.cancel(); }catch(e){} }
+function exShow(i){
+  const s = SCENES[i], st = $('#exstage');
+  st.innerHTML = '';
+  const d = document.createElement('div');
+  d.className = 'scene' + (s.big?' big':'');
+  d.innerHTML = '<div class="cap">'+s.cap+'</div>' + (s.end ? '<div class="endwrap"><button class="encta" id="enpledge">Take the pledge ↓</button><button class="encta" id="enreplay" style="background:none;color:var(--cream-2);border:1px solid rgba(198,162,73,.4);box-shadow:none">↻ Replay</button></div>' : '');
+  st.appendChild(d);
+  requestAnimationFrame(()=> d.classList.add('show'));
+  $('#exbar').style.width = ((i+1)/SCENES.length*100) + '%';
+  if(s.end){
+    const p = $('#enpledge'); if(p) p.addEventListener('click', ()=>{ exStop(); $('#voteCard').scrollIntoView({behavior:'smooth',block:'start'}); });
+    const r = $('#enreplay'); if(r) r.addEventListener('click', ()=> exPlay());
+  }
+}
+function exStep(){
+  if(!exPlaying || exIdx>=SCENES.length) return;
+  const s = SCENES[exIdx];
+  exShow(exIdx);
+  if(s.end){ return; } // hold on the final scene
+  if(exVO && 'speechSynthesis' in window){
+    try{ speechSynthesis.cancel(); speechSynthesis.speak(Object.assign(new SpeechSynthesisUtterance(s.say),{rate:.92,pitch:1})); }catch(e){}
+  }
+  const dur = Math.max(3600, s.say.length*72) + 450;
+  exIdx++;
+  exTimer = setTimeout(exStep, dur);
+}
+function exPlay(){
+  exClear(); exPlaying=true; exIdx=0;
+  vEl.classList.add('playing');
+  $('#vposter').style.display='none';
+  $('#ex').classList.add('on');
+  exStep();
+}
+function exStop(){ exClear(); exPlaying=false; $('#ex').classList.remove('on'); vEl.classList.remove('playing'); $('#vposter').style.display='flex'; }
+$('#exvo').addEventListener('click', e=>{ e.stopPropagation(); exVO=!exVO; e.target.textContent = exVO?'🔊 Voiceover: On':'🔇 Voiceover: Off'; if(!exVO){ try{speechSynthesis.cancel();}catch(_){} } });
+$('#exreplay').addEventListener('click', e=>{ e.stopPropagation(); exPlay(); });
+$('#exskip').addEventListener('click', e=>{ e.stopPropagation(); exStop(); $('#voteCard').scrollIntoView({behavior:'smooth',block:'start'}); });
+
+/* manifesto toggle */
+$('#mToggle').addEventListener('click',()=>{
+  const m = $('#manifesto'); const open = m.classList.toggle('show');
+  $('#mToggle').textContent = open ? 'Hide the manifesto ▴' : 'Read the full manifesto ▾';
+});
+
+/* validation helpers */
+const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+function showErr(id,on){ document.getElementById(id).classList.toggle('show',on); }
+
+/* submit */
+$('#vForm').addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const name = $('#name').value.trim();
+  const email = $('#email').value.trim();
+  const mobile = $('#mobile').value.trim();
+  const country = $('#country').value.trim();
+  const pledged = $('#pledge').checked;
+
+  let ok = true;
+  showErr('e-name', !name); if(!name) ok=false;
+  showErr('e-email', !isEmail(email)); if(!isEmail(email)) ok=false;
+  showErr('e-pledge', !pledged); if(!pledged) ok=false;
+  if(!ok) return;
+
+  const btn = $('#submitBtn'); btn.disabled = true; btn.textContent = 'Welcoming you to the mission…';
+
+  const now = new Date();
+  const record = { name, email, mobile, country, vote: myVote, pledge:'Yes',
+    source: document.referrer || 'direct', page:'Volunteer Registration',
+    timestamp: now.toISOString() };
+
+  /* 1) local backup — nothing is ever lost */
+  const all = JSON.parse(localStorage.getItem('fpl_volunteers') || '[]');
+  all.push(record); localStorage.setItem('fpl_volunteers', JSON.stringify(all));
+
+  /* 2) send to your Google Sheet (separate volunteer DB) */
+  if(hasScript){
+    try{
+      await fetch(SCRIPT_URL, { method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:new URLSearchParams(record).toString() });
+    }catch(err){ /* kept in local backup regardless */ }
+  }
+
+  /* 3) issue ID + show success */
+  const num = SEED_COUNT + all.length;
+  const idStr = 'FPL-V-' + String(num).padStart(6,'0');
+  $('#welcomeNum').textContent = 'Future Proofer #' + num.toLocaleString();
+  $('#idNum').textContent = idStr;
+  $('#idName').textContent = name;
+  $('#idDate').textContent = now.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});
+  if(!s_(NEXT_STEP_URL)) $('#nextLink').href = NEXT_STEP_URL;
+
+  const shareText = "I just became Future Proofer #" + num + " — joining a movement to future-proof Happiness, Health & Wealth. Join me:";
+  $('#shareBtn').textContent = '📣 Share — “I’m a Future Proofer #' + num + '. Join the mission.”';
+  $('#shareBtn').onclick = ()=>{
+    const url = location.href;
+    if(navigator.share){ navigator.share({title:'I am a Future Proofer', text:shareText, url}); }
+    else { navigator.clipboard.writeText(shareText + ' ' + url); $('#shareBtn').textContent='✓ Copied — paste it anywhere'; }
+  };
+
+  $('#formCard').style.display='none';
+  $('#success').style.display='block';
+  $('#success').scrollIntoView({behavior:'smooth',block:'start'});
+  fabUpdate();
+});
+</script>
+</body>
+</html>

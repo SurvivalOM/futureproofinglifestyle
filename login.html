@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Volunteer Login — Future Proofing Lifestyle</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="fpl-emblem.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#14223F;--navy-2:#1B2C54;--navy-3:#22335f;--gold:#C6A249;--gold-lt:#E3C778;--cream:#F4F1E8;--cream-2:#D9D5C7;--muted:#9DA8C2;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--cream);background:var(--navy);
+    background-image:radial-gradient(900px 600px at 50% -10%, #243a6b 0%, var(--navy-2) 45%, var(--navy) 82%);
+    min-height:100vh;display:flex;flex-direction:column;align-items:center;-webkit-font-smoothing:antialiased;padding:26px 18px}
+  .top{display:flex;align-items:center;gap:10px;margin:6px 0 26px;text-decoration:none}
+  .top img{width:34px;height:34px;object-fit:contain}
+  .top b{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--cream)}
+  .top b span{color:var(--gold)}
+  .card{width:100%;max-width:440px;background:linear-gradient(180deg,rgba(34,51,95,.85),rgba(27,44,84,.92));
+    border:1px solid rgba(198,162,73,.4);border-radius:20px;padding:30px 26px;box-shadow:0 20px 55px rgba(0,0,0,.4)}
+  .card h1{font-family:var(--serif);font-weight:600;font-size:28px;text-align:center;color:var(--cream);margin-bottom:6px}
+  .card .lead{text-align:center;font-size:14.5px;color:var(--muted);margin-bottom:22px;line-height:1.55}
+  label{display:block;font-size:13px;color:var(--cream-2);margin-bottom:7px}
+  input{width:100%;padding:14px;font-family:var(--sans);font-size:16px;color:var(--cream);background:rgba(10,18,38,.6);
+    border:1px solid rgba(157,168,194,.35);border-radius:11px;transition:.16s;text-align:center;letter-spacing:.5px}
+  input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,162,73,.18)}
+  input#code{font-size:26px;letter-spacing:10px;font-weight:600}
+  input::placeholder{color:#6f7c9c;letter-spacing:normal;font-weight:400}
+  .btn{width:100%;margin-top:16px;padding:15px;font-family:var(--sans);font-size:16px;font-weight:600;color:var(--navy);
+    background:linear-gradient(180deg,var(--gold-lt),var(--gold));border:none;border-radius:12px;cursor:pointer;transition:.16s;box-shadow:0 8px 24px rgba(198,162,73,.3)}
+  .btn:hover{transform:translateY(-1px)} .btn:disabled{opacity:.65;cursor:wait;transform:none}
+  .sub-actions{display:flex;justify-content:space-between;margin-top:14px;font-size:13px}
+  .sub-actions a{color:var(--gold-lt);text-decoration:none;cursor:pointer}
+  .sub-actions a:hover{text-decoration:underline}
+  .err{color:#ff9a8a;font-size:13px;margin-top:10px;text-align:center;display:none}
+  .err.show{display:block}
+  .demo{margin-top:16px;font-size:12.5px;color:var(--gold-lt);background:rgba(198,162,73,.1);border:1px dashed rgba(198,162,73,.45);border-radius:10px;padding:10px 12px;text-align:center;line-height:1.5}
+  .demo b{font-size:18px;letter-spacing:4px}
+  .hide{display:none}
+  .trust{text-align:center;font-size:12px;color:var(--muted);margin-top:18px}
+  .trust i{color:var(--gold);font-style:normal}
+  /* ---- logged-in area ---- */
+  .vhi{font-family:var(--serif);font-weight:600;font-size:26px;text-align:center;color:var(--cream);margin-bottom:14px}
+  .idcard{background:linear-gradient(135deg,#22335f,#14223F);border:1px solid var(--gold);border-radius:14px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden}
+  .idcard::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border:1px solid rgba(198,162,73,.25);border-radius:50%}
+  .idcard .l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+  .idcard .num{font-family:var(--serif);font-size:23px;color:var(--gold-lt);margin:2px 0 12px}
+  .idcard .nm{font-size:18px;color:var(--cream);font-weight:600}
+  .idcard .tier{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .impact{text-align:center;font-size:13.5px;color:var(--cream-2);margin-bottom:22px;line-height:1.5}
+  .impact b{color:var(--gold-lt)}
+  .vsec{margin-bottom:22px}
+  .vsec h3{font-family:var(--serif);font-weight:600;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .vnote{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:10px}
+  .upd{background:rgba(10,18,38,.45);border:1px solid rgba(198,162,73,.18);border-left:3px solid var(--gold);border-radius:0 11px 11px 0;padding:13px 15px;margin-bottom:10px}
+  .upd .ud{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  .upd .ut{font-weight:600;color:var(--cream);font-size:15px;margin-bottom:3px}
+  .upd .ub{font-size:13px;color:var(--cream-2);line-height:1.5}
+  .vbooks{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+  .vbooks .vb{text-align:center}
+  .vbooks img{width:100%;border-radius:5px;box-shadow:0 5px 14px rgba(0,0,0,.45)}
+  .vbooks .vt{font-size:10.5px;color:var(--cream-2);margin-top:5px;line-height:1.2}
+  .invite-row{display:flex;gap:8px;margin-top:4px}
+  .invite-row input{flex:1;text-align:left;font-size:13px;letter-spacing:0;padding:11px 12px}
+  .invite-share{display:flex;gap:8px;margin-top:9px}
+  .vbtn{flex:none;padding:11px 16px;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--navy);background:linear-gradient(180deg,var(--gold-lt),var(--gold));border:none;border-radius:10px;cursor:pointer;transition:.15s}
+  .vbtn:hover{transform:translateY(-1px)}
+  .vbtn.ghost{flex:1;background:none;color:var(--gold-lt);border:1px solid rgba(198,162,73,.45)}
+  .vbtn.ghost:hover{background:rgba(198,162,73,.1)}
+  .logout{display:block;text-align:center;margin-top:8px;font-size:13px;color:var(--muted);cursor:pointer;text-decoration:none}
+  .logout:hover{color:var(--gold-lt)}
+  @media(max-width:480px){ .vbooks{grid-template-columns:repeat(4,1fr)} }
+</style>
+</head>
+<body>
+  <a class="top" href="index.html"><img src="fpl-emblem.png" alt="FPL" /><b>Future Proofing <span>Lifestyle</span></b></a>
+
+  <div class="card">
+    <!-- STEP 1: email -->
+    <div id="step-email">
+      <h1>Volunteer login</h1>
+      <p class="lead">Enter the email you joined with. We'll send you a <b>6-digit code</b> — no password needed.</p>
+      <form id="emailForm" novalidate>
+        <label for="email">Your email</label>
+        <input type="email" id="email" placeholder="you@email.com" autocomplete="email" />
+        <button type="submit" class="btn" id="sendBtn">Send me my code →</button>
+        <div class="err" id="emailErr">We couldn't find that email on the volunteer register. <a href="join.html" style="color:var(--gold-lt)">Join free →</a></div>
+      </form>
+      <p class="trust"><i>🔒</i> Only registered volunteers can log in. We never share your details.</p>
+    </div>
+
+    <!-- STEP 2: code -->
+    <div id="step-code" class="hide">
+      <h1>Enter your code</h1>
+      <p class="lead">We sent a 6-digit code to <b id="emailEcho">your email</b>. Enter it below.</p>
+      <form id="codeForm" novalidate>
+        <label for="code" style="text-align:center">6-digit code</label>
+        <input type="text" id="code" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="one-time-code" />
+        <button type="submit" class="btn" id="verifyBtn">Log me in →</button>
+        <div class="err" id="codeErr">That code isn't right. Please try again.</div>
+      </form>
+      <div class="demo hide" id="demoBox">Demo mode — your code is <b id="demoCode">000000</b><br><span style="opacity:.8">(Real codes arrive by email once the backend is switched on.)</span></div>
+      <div class="sub-actions">
+        <a id="resend">Resend code</a>
+        <a id="changeEmail">Change email</a>
+      </div>
+    </div>
+
+    <!-- STEP 3: logged in -->
+    <div id="step-in" class="hide">
+      <h2 class="vhi">Welcome, <span id="vHi">Future Proofer</span>.</h2>
+      <div class="idcard">
+        <div class="l">Future Proofing Lifestyle · Volunteer ID</div>
+        <div class="num" id="vId">FPL-V-00____</div>
+        <div class="nm" id="vName">Future Proofer</div>
+        <div class="tier">Tier: Volunteer · since <span id="vSince">—</span></div>
+      </div>
+      <p class="impact" id="vImpact">You're one of the first to stand up. Thank you.</p>
+
+      <div class="vsec">
+        <h3>📣 Mission updates</h3>
+        <div id="updates"></div>
+      </div>
+
+      <div class="vsec">
+        <h3>📖 The Guiding Lights</h3>
+        <div class="vbooks" id="vbooks"></div>
+        <p class="vnote">Free to read or hear. Your in-app readers are opening here soon — every book, chapter by chapter, at no cost.</p>
+      </div>
+
+      <div class="vsec">
+        <h3>🤝 Bring others into the mission</h3>
+        <p class="vnote" style="margin-top:0;margin-bottom:10px">Share your personal invite link. Every Future Proofer you bring makes the movement stronger.</p>
+        <div class="invite-row"><input id="inviteLink" readonly value="…" /><button class="vbtn" id="copyInvite">Copy</button></div>
+        <div class="invite-share">
+          <button class="vbtn ghost" id="waShare">Share on WhatsApp</button>
+          <button class="vbtn ghost" id="moreShare">Share…</button>
+        </div>
+      </div>
+
+      <a class="logout" id="logout">Log out</a>
+    </div>
+  </div>
+
+<script>
+/* ============================================================ CONFIG ============================================================ */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyPlIEiGJnmF8HhMJ475pT708-eFWureJcvQbRZ20aZVW1-2RGv4Zs4tvLlI6D3Mz6h/exec";
+const DEMO_MODE = false;            // true = show code on screen; false = real emailed codes
+const SEED_DISPLAY = 1007;          // movement-size baseline (matches the join page)
+/* ============================================================ */
+
+const $ = s => document.querySelector(s);
+const show = id => { ['step-email','step-code','step-in'].forEach(s=>$('#'+s).classList.add('hide')); $('#'+id).classList.remove('hide'); };
+const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+let currentEmail = '', demoCode = '';
+
+function jsonp(url, cb){
+  const name='cb'+Math.random().toString(36).slice(2);
+  const s=document.createElement('script'); let done=false;
+  window[name]=d=>{done=true;try{cb(d);}finally{delete window[name];s.remove();}};
+  s.onerror=()=>{if(!done){delete window[name];s.remove();cb({result:'error'});}};
+  s.src=url+(url.indexOf('?')>-1?'&':'?')+'callback='+name;
+  document.body.appendChild(s);
+  setTimeout(()=>{if(!done){try{delete window[name];s.remove();}catch(e){} cb({result:'timeout'});}},9000);
+}
+
+const SESSION_KEY='fpl_session';
+function saveSession(v){ localStorage.setItem(SESSION_KEY, JSON.stringify(v)); }
+function loadSession(){ try{ return JSON.parse(localStorage.getItem(SESSION_KEY)||'null'); }catch(e){ return null; } }
+
+/* ---- step 1: request code ---- */
+$('#emailForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const email=$('#email').value.trim();
+  $('#emailErr').classList.remove('show');
+  if(!isEmail(email)){ $('#emailErr').textContent='Please enter a valid email.'; $('#emailErr').classList.add('show'); return; }
+  currentEmail=email;
+  const btn=$('#sendBtn'); btn.disabled=true; btn.textContent='Sending your code…';
+  if(DEMO_MODE){
+    demoCode=String(Math.floor(100000+(window.crypto?crypto.getRandomValues(new Uint32Array(1))[0]:Date.now())%900000)).slice(0,6);
+    setTimeout(()=>{ goToCode(email); $('#demoBox').classList.remove('hide'); $('#demoCode').textContent=demoCode; btn.disabled=false; btn.textContent='Send me my code →'; }, 500);
+    return;
+  }
+  jsonp(SCRIPT_URL+'?action=requestCode&email='+encodeURIComponent(email), d=>{
+    btn.disabled=false; btn.textContent='Send me my code →';
+    if(d.result==='sent'){ goToCode(email); }
+    else if(d.result==='notfound'){ $('#emailErr').innerHTML="We couldn't find that email on the volunteer register. <a href='join.html' style='color:var(--gold-lt)'>Join free →</a>"; $('#emailErr').classList.add('show'); }
+    else { $('#emailErr').textContent='Something went wrong — please try again.'; $('#emailErr').classList.add('show'); }
+  });
+});
+function goToCode(email){ $('#emailEcho').textContent=email; show('step-code'); setTimeout(()=>$('#code').focus(),120); }
+
+/* ---- step 2: verify code ---- */
+$('#codeForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const code=$('#code').value.trim();
+  $('#codeErr').classList.remove('show');
+  if(code.length!==6){ $('#codeErr').textContent='Please enter all 6 digits.'; $('#codeErr').classList.add('show'); return; }
+  const btn=$('#verifyBtn'); btn.disabled=true; btn.textContent='Logging you in…';
+  if(DEMO_MODE){
+    setTimeout(()=>{ btn.disabled=false; btn.textContent='Log me in →';
+      if(code===demoCode){ logIn({ id:'FPL-V-001008', name: currentEmail.split('@')[0], since:'today', email:currentEmail }); }
+      else { $('#codeErr').classList.add('show'); } },500);
+    return;
+  }
+  jsonp(SCRIPT_URL+'?action=verifyCode&email='+encodeURIComponent(currentEmail)+'&code='+encodeURIComponent(code), d=>{
+    btn.disabled=false; btn.textContent='Log me in →';
+    if(d.result==='ok' && d.volunteer){ logIn(d.volunteer); }
+    else { $('#codeErr').classList.add('show'); }
+  });
+});
+$('#resend').addEventListener('click', ()=>{ $('#emailForm').dispatchEvent(new Event('submit',{cancelable:true})); });
+$('#changeEmail').addEventListener('click', ()=>{ show('step-email'); });
+
+/* ---- step 3: the volunteer area ---- */
+const UPDATES = [
+  { d:'June 2026', t:'The movement is live', b:'Volunteer registration and your member login are now open. Welcome to the very beginning — you are early.' },
+  { d:'Coming soon', t:'The Guiding Lights, free to read or hear', b:'We are bringing every book into your area — read or listen, chapter by chapter, at no cost.' }
+];
+const VBOOKS = [
+  { t:'Hu-Kno-Mi', c:'cover-hukonomi.jpg' },
+  { t:'Good Money', c:'cover-goodmoney.jpg' },
+  { t:'2 Questions', c:'cover-2questions.jpg' },
+  { t:'ProFit', c:'cover-profit.jpg' }
+];
+function renderUpdates(){
+  $('#updates').innerHTML = UPDATES.map(u=>'<div class="upd"><div class="ud">'+u.d+'</div><div class="ut">'+u.t+'</div><div class="ub">'+u.b+'</div></div>').join('');
+}
+function renderBooks(){
+  $('#vbooks').innerHTML = VBOOKS.map(b=>'<div class="vb"><img src="'+b.c+'" alt="'+b.t+'" /><div class="vt">'+b.t+'</div></div>').join('');
+}
+function setupInvite(v){
+  const link = location.origin + '/join.html?ref=' + encodeURIComponent(v.id||'');
+  $('#inviteLink').value = link;
+  const msg = "I just joined the Future Proofing Lifestyle movement — future-proofing Happiness, Health & Wealth, for free. Stand with me:";
+  $('#copyInvite').onclick = ()=>{ navigator.clipboard.writeText(link).then(()=>{ $('#copyInvite').textContent='Copied ✓'; setTimeout(()=>$('#copyInvite').textContent='Copy',1800); }); };
+  $('#waShare').onclick = ()=>{ window.open('https://wa.me/?text='+encodeURIComponent(msg+' '+link),'_blank'); };
+  $('#moreShare').onclick = ()=>{ if(navigator.share){ navigator.share({title:'Future Proofing Lifestyle', text:msg, url:link}); } else { navigator.clipboard.writeText(msg+' '+link); $('#moreShare').textContent='Copied ✓'; setTimeout(()=>$('#moreShare').textContent='Share…',1800); } };
+}
+function setImpact(v){
+  var num = parseInt(String(v.id||'').replace(/\D/g,''),10);
+  var line = num ? ('You are Future Proofer <b>#'+num.toLocaleString()+'</b> — one of the first to stand up. Thank you.') : 'You are one of the first to stand up. Thank you.';
+  $('#vImpact').innerHTML = line;
+  jsonp(SCRIPT_URL, d=>{ if(d && typeof d.volunteers==='number'){ var total=(SEED_DISPLAY+d.volunteers).toLocaleString(); $('#vImpact').innerHTML = line + '<br>The movement is now <b>'+total+'</b> strong and growing.'; } });
+}
+function logIn(v){
+  saveSession(v);
+  $('#vHi').textContent = (v.name||'Future Proofer').split(' ')[0];
+  $('#vId').textContent = v.id || 'FPL-V-00____';
+  $('#vName').textContent = v.name || 'Future Proofer';
+  $('#vSince').textContent = v.since || '—';
+  renderUpdates(); renderBooks(); setupInvite(v); setImpact(v);
+  show('step-in');
+}
+$('#logout').addEventListener('click', ()=>{ localStorage.removeItem(SESSION_KEY); $('#email').value=''; $('#code').value=''; show('step-email'); });
+
+/* auto-resume an existing session */
+(function(){ const s=loadSession(); if(s && s.id){ logIn(s); } })();
+</script>
+</body>
+</html>
