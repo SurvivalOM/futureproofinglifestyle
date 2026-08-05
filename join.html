@@ -424,14 +424,14 @@
    CONFIG — fill these in (see "READ ME - Setup & Deploy.md"):
    ============================================================ */
 const SCRIPT_URL    = "https://script.google.com/macros/s/AKfycbyPlIEiGJnmF8HhMJ475pT708-eFWureJcvQbRZ20aZVW1-2RGv4Zs4tvLlI6D3Mz6h/exec"; // your Google Sheet endpoint (/exec)
-const NEXT_STEP_URL = "__PASTE_YOUR_TAG_MANGO_FREE_MEMBERSHIP_LINK_HERE__";  // Friends & Family link
+const NEXT_STEP_URL = "https://vibe.fplfamilynetwork.com/l/a47c51ca47";  // Friends & Family free membership
 const VIDEO_ID      = "__PASTE_YOUR_YOUTUBE_VIDEO_ID_HERE__"; // OPTIONAL. Leave as-is to use the built-in animated explainer.
 const SEED_COUNT    = 1007; // baseline so the first volunteer becomes #1008 (true count lives in your Sheet)
 const VOTE_SEED     = { Happiness: 402, Health: 451, Wealth: 327 }; // baseline vote tallies for social proof
 /* The Guiding Lights. Paste each book's hosted reading-app URL into `url` to make its
    button live; leave "" to show a tidy "opening soon" until the app is hosted. */
 const BOOKS = [
-  { title:'Hu-Kno-Mi',            tag:'The foundation · the 13 Guiding Lights', desc:'Drive out ignorance and install the basic truths that future-proof any life.',      cover:'cover-hukonomi.jpg',  url:'' },
+  { title:'Hu-Kno-Mi',            tag:'The foundation · the 13 Guiding Lights', desc:'Drive out ignorance and install the basic truths that future-proof any life.',      cover:'cover-hukonomi.jpg',  url:'https://huknomi.com/read.html' },
   { title:'Good Money, Bad Money',tag:'Wealth, the honest way',                  desc:'Build real wealth without harming a single person — or nature.',                     cover:'cover-goodmoney.jpg', url:'' },
   { title:'2 Questions',          tag:'Clarity',                                desc:'Two simple questions that can quietly redirect the whole course of your life.',     cover:'cover-2questions.jpg',url:'' },
   { title:'ProFit',               tag:'Professional fitness',                   desc:'Become genuinely world-class at the work that is truly yours.',                      cover:'cover-profit.jpg',    url:'' },
@@ -655,8 +655,16 @@ $('#vForm').addEventListener('submit', async (e)=>{
     }catch(err){ /* kept in local backup regardless */ }
   }
 
-  /* 3) issue ID + show success */
-  const num = SEED_COUNT + all.length;
+  /* 3) issue ID + show success — ask the live register for the true number
+        (the sheet assigns the real ID; the local estimate is only a fallback) */
+  let num = SEED_COUNT + all.length;
+  if(hasScript){
+    try{
+      const live = await new Promise((res)=>{ const t=setTimeout(()=>res(null),4000);
+        jsonp(SCRIPT_URL, d=>{ clearTimeout(t); res(d); }); });
+      if(live && live.volunteers) num = SEED_COUNT + live.volunteers;
+    }catch(err){}
+  }
   const idStr = 'FPL-V-' + String(num).padStart(6,'0');
   $('#welcomeNum').textContent = 'Future Proofer #' + num.toLocaleString();
   $('#idNum').textContent = idStr;

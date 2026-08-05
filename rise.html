@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rise Again — the weekly live class | Future Proofing Lifestyle</title>
+<meta name="description" content="Rise Again — the free weekly live class of the Future Proofing Lifestyle Network. Class #1: Sunday 16 August 2026, 7:00 PM IST. Reserve your seat free." />
+<link rel="icon" type="image/png" href="fpl-emblem.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14223F; --navy-2:#1B2C54; --navy-3:#22335f;
+    --gold:#C6A249; --gold-lt:#E3C778; --gold-dk:#A8842F;
+    --cream:#F4F1E8; --cream-2:#D9D5C7; --muted:#9DA8C2;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--cream);line-height:1.65;background:var(--navy);
+    background-image:radial-gradient(1200px 700px at 50% -15%, #243a6b 0%, var(--navy-2) 42%, var(--navy) 80%);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(16,26,50,.78);backdrop-filter:blur(10px);border-bottom:1px solid rgba(198,162,73,.16)}
+  nav .row{display:flex;align-items:center;gap:18px;height:64px;max-width:1080px;margin:0 auto;padding:0 22px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand img{width:34px;height:34px;object-fit:contain}
+  .brand b{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--cream)}
+  .brand b span{color:var(--gold)}
+  .navlinks{margin-left:auto;display:flex;gap:18px}
+  .navlinks a{font-size:14px;color:var(--cream-2);text-decoration:none}
+  .navlinks a:hover{color:var(--gold-lt)}
+  .eyebrow{font-size:12px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold-lt)}
+  .hero{text-align:center;padding:58px 0 20px}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:50px;line-height:1.1;margin:14px 0 16px}
+  .hero h1 .hl{color:var(--gold)}
+  .hero p.sub{font-size:18px;color:var(--cream-2);max-width:600px;margin:0 auto}
+  .when{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px 0 6px}
+  .when .chip{background:rgba(198,162,73,.12);border:1px solid rgba(198,162,73,.45);border-radius:14px;padding:14px 22px;text-align:center}
+  .when .chip b{display:block;font-size:19px;color:var(--gold-lt)}
+  .when .chip span{font-size:12.5px;color:var(--muted)}
+  .card{background:rgba(255,255,255,.045);border:1px solid rgba(198,162,73,.28);border-radius:18px;padding:30px 28px;margin:34px 0}
+  .card h2{font-family:var(--serif);font-weight:600;font-size:28px;margin-bottom:12px;color:var(--cream)}
+  .card p{font-size:15.5px;color:var(--cream-2);margin-bottom:10px}
+  ul.what{list-style:none;margin:14px 0 4px}
+  ul.what li{padding:8px 0 8px 30px;position:relative;font-size:15.5px;color:var(--cream-2)}
+  ul.what li::before{content:"✦";position:absolute;left:4px;color:var(--gold)}
+  label{display:block;font-size:13.5px;color:var(--cream-2);margin:14px 0 6px;font-weight:600}
+  input[type=text],input[type=email]{width:100%;padding:13px 15px;border-radius:11px;border:1px solid rgba(198,162,73,.35);background:rgba(10,18,38,.6);color:var(--cream);font-family:var(--sans);font-size:15px}
+  input:focus{outline:none;border-color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15.5px;padding:14px 26px;border-radius:30px;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:.18s;font-family:var(--sans)}
+  .btn-gold{background:linear-gradient(180deg,var(--gold-lt),var(--gold));color:var(--navy);box-shadow:0 8px 24px rgba(198,162,73,.28);width:100%;margin-top:20px}
+  .btn-gold:hover{transform:translateY(-1px)}
+  .btn-ghost{background:rgba(255,255,255,.04);border-color:rgba(198,162,73,.5);color:var(--gold-lt);font-size:14px;padding:11px 20px}
+  .micro{font-size:12.5px;color:var(--muted);margin-top:12px;text-align:center}
+  .ok{display:none;text-align:center;padding:10px 0}
+  .ok h3{font-family:var(--serif);font-size:26px;color:var(--gold-lt);margin-bottom:8px}
+  .alt{border-top:1px solid rgba(198,162,73,.2);margin-top:22px;padding-top:18px;text-align:center}
+  .alt p{font-size:14px;color:var(--muted)}
+  .err{display:none;color:#e8a0a0;font-size:13.5px;margin-top:10px;text-align:center}
+  footer{text-align:center;padding:36px 0 30px;font-size:12.5px;color:var(--muted)}
+  @media(max-width:560px){.hero h1{font-size:36px}}
+</style>
+</head>
+<body>
+<nav><div class="row">
+  <a class="brand" href="index.html"><img src="fpl-emblem.png" alt="FPL emblem"><b>Future Proofing <span>Lifestyle</span></b></a>
+  <div class="navlinks"><a href="join.html">Become a Volunteer</a><a href="login.html">Login</a></div>
+</div></nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">The weekly live class · free</div>
+    <h1>Rise <span class="hl">Again</span></h1>
+    <p class="sub">Once a week, we meet live — to rise above the fear of survival and learn to create, protect and transfer Happiness, Health and Wealth. Real frameworks, real questions, no recordings-only distance. This is where the journey truly begins.</p>
+    <div class="when">
+      <div class="chip"><b>Class #1</b><span>the first ever</span></div>
+      <div class="chip"><b>Sunday, 16 August 2026</b><span>7:00 PM IST · 9:30 AM ET</span></div>
+      <div class="chip"><b>Live online · Free</b><span>join link arrives by email</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>In Class #1</h2>
+    <ul class="what">
+      <li>Why financial freedom comes first — and FPL's own definition of it: your actions are never motivated by money alone.</li>
+      <li>The Golden Ticket — what your life truly costs to run, and why that number is smaller than you fear.</li>
+      <li>The Golden Platform — the place where the daily fear of survival finally switches off.</li>
+      <li>Your next step on the ladder — and the Rise Again door into the Friends &amp; Family membership.</li>
+    </ul>
+    <p style="margin-top:12px">Come with the free chapter read if you can — <a href="https://huknomi.com/read.html" style="color:var(--gold-lt)">The Golden Ticket &amp; the Golden Platform</a> (15 minutes).</p>
+  </div>
+
+  <div class="card" id="regCard">
+    <h2>Reserve your seat — free</h2>
+    <p>Every Rise Again seat is a volunteer seat. Reserving makes you a Future Proofer of the FPL Network (free, forever) and your join link arrives by email before the class.</p>
+    <form id="riseForm" novalidate>
+      <label for="rn">Your name</label>
+      <input type="text" id="rn" placeholder="First &amp; last name" required>
+      <label for="re">Email</label>
+      <input type="email" id="re" placeholder="you@email.com" required>
+      <button type="submit" class="btn btn-gold" id="rbtn">Reserve my seat →</button>
+      <div class="err" id="rerr">Please enter your name and a valid email.</div>
+      <div class="micro">Free. No card, no spam — only your class link and mission updates. Leave anytime.</div>
+    </form>
+    <div class="ok" id="rok">
+      <h3>Your seat is reserved.</h3>
+      <p style="color:var(--cream-2);font-size:15px">Welcome, Future Proofer. Your join link will arrive by email before the class.</p>
+      <p style="margin-top:14px"><a class="btn btn-ghost" id="icsBtn" href="#">＋ Add to my calendar</a></p>
+    </div>
+    <div class="alt">
+      <p>Already a Future Proofer? Your seat is already yours — just <a href="#" id="icsBtn2" style="color:var(--gold-lt)">add the class to your calendar</a> and come as you are.</p>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Future Proofing Lifestyle Network · Rise Again is free — the movement's weekly fire.</footer>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyPlIEiGJnmF8HhMJ475pT708-eFWureJcvQbRZ20aZVW1-2RGv4Zs4tvLlI6D3Mz6h/exec";
+const CLASS_TAG  = "RiseAgain-Class1";
+
+function makeICS(){
+  var ics = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//FPL//RiseAgain//EN","BEGIN:VEVENT",
+    "UID:riseagain-class1@futureproofinglifestyle.com",
+    "DTSTAMP:20260805T000000Z",
+    "DTSTART:20260816T133000Z",
+    "DTEND:20260816T143000Z",
+    "SUMMARY:Rise Again — Class #1 (FPL live)",
+    "DESCRIPTION:The first Rise Again live class of the Future Proofing Lifestyle Network. Your join link arrives by email.",
+    "URL:https://www.futureproofinglifestyle.com/rise.html",
+    "END:VEVENT","END:VCALENDAR"].join("\r\n");
+  var a=document.createElement('a');
+  a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+  a.download='rise-again-class1.ics'; document.body.appendChild(a); a.click(); a.remove();
+}
+document.getElementById('icsBtn').addEventListener('click',function(e){e.preventDefault();makeICS();});
+document.getElementById('icsBtn2').addEventListener('click',function(e){e.preventDefault();makeICS();});
+
+document.getElementById('riseForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var n=document.getElementById('rn').value.trim(), em=document.getElementById('re').value.trim();
+  var ok=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em);
+  var err=document.getElementById('rerr');
+  if(!n||!ok){err.style.display='block';return;}
+  err.style.display='none';
+  var b=document.getElementById('rbtn'); b.disabled=true; b.textContent='Reserving your seat…';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams({name:n,email:em,pledge:'',vote:'',country:'',mobile:'',
+        source:CLASS_TAG,page:'rise.html',timestamp:new Date().toISOString()}).toString()});
+  }catch(_){}
+  document.getElementById('riseForm').style.display='none';
+  document.getElementById('rok').style.display='block';
+});
+</script>
+</body>
+</html>
